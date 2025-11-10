@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+}
+
+#sidebar > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
