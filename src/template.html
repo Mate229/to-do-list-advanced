@@ -28,6 +28,36 @@
         </div>
 
         <div id="content"></div>
+        <div id="todocontent"></div>
     </div>
+
+    <dialog id="default">
+        <form method="dialog">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title">
+            </div>
+            <div>
+                <label for="desc">Description</label>
+                <input type="text" id="desc">
+            </div>
+            <div>
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate">
+            </div>
+            <div>
+                <label for="priority">Priority</label>
+                <select name="priority" id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">low</option>
+                </select>
+            </div>
+            <div>
+                <button id="cancel-default-btn">Cancel</button>
+                <button id="submit-default-btn">Add</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>

@@ -2,7 +2,7 @@ const myToDos = [];
 
 const myCategories = [];
 
-class Todo {
+export class Todo {
     constructor(title, desc, dueDate, priority) {
         this.id = crypto.randomUUID();
         this.title = title;

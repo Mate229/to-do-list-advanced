@@ -1,4 +1,4 @@
-import { myToDos } from "./to-do";
+import { displayTodo } from "./to-do-display"; 
 
 export default function() {
     const content = document.querySelector('#content');
@@ -7,22 +7,8 @@ export default function() {
     addTaskButton.textContent = 'Add Task';
     addTaskButton.id = 'addToDefault';
 
-    content.appendChild(addTaskButton)
+    content.appendChild(addTaskButton);
 
-    for (let todo of myToDos) {
-        const card = document.createElement('div');
+    displayTodo();
 
-        const cardTitle = document.createElement('h2');
-        cardTitle.textContent = todo.title;
-
-        const cardDate = document.createElement('p');
-        cardDate.textContent = todo.dueDate;
-
-        card.classList.add(todo.priority);
-        card.setAttribute('todo-id', todo.id);
-
-        card.append(cardTitle, cardDate);
-
-        content.insertBefore(card, addTaskButton)
-    }
 };
