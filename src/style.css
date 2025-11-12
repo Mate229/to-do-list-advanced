@@ -34,3 +34,14 @@ li {
 .low {
     background-color: green;
 }
+
+.completed > h2 {
+    text-decoration: line-through;
+}
+
+.completed > h2::after {
+    content: '✅';
+    display: inline-block;
+    margin-left: 10px;
+    
+}

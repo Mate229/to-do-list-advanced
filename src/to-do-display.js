@@ -1,7 +1,7 @@
 import { Todo, myToDos } from "./to-do";
 const defaultDialog = document.querySelector('#default');
 
-const form = document.querySelector("form");
+const form = defaultDialog.querySelector("form");
 const submitBtn = document.querySelector("#submit-btn");
 
 export function showDefaultDialog() {
@@ -32,6 +32,21 @@ export function displayTodo() {
             card.append(cardTitle, cardDate);
 
             content.insertBefore(card, addTaskButton)
+        } else {
+            const card = document.querySelector(`[todo-id="${todo.id}"]`);
+            card.classList.remove('high');
+            card.classList.remove('medium');
+            card.classList.remove('low');
+
+            card.classList.add(todo.priority);
+
+            card.querySelector('h2').textContent = todo.title;
+            card.querySelector('p').textContent = todo.dueDate;
+
+            if (todo.completed) {
+                content.insertBefore(card, addTaskButton);
+            }
+
         }
     }
 };

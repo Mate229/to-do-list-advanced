@@ -9,6 +9,15 @@ export class Todo {
         this.desc = desc;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.completed = false;
+    }
+
+    toggleCompleted() {
+        if (!this.completed) {
+            this.completed = true
+        } else {
+            this.completed = false;
+        }
     }
 
     addToList() {
@@ -17,6 +26,13 @@ export class Todo {
 
     addToCategory(name) {
         name.push(this);
+    }
+
+    edit(newTitle, newDesc, newDueDate, newPriority) {
+        this.title = newTitle;
+        this.desc = newDesc;
+        this.dueDate = newDueDate;
+        this.priority = newPriority;
     }
 };
 
