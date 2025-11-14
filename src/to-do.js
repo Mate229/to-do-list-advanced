@@ -1,6 +1,6 @@
-const myToDos = [];
+let myToDos = [];
 
-const myCategories = [];
+let myCategories = [];
 
 export class Todo {
     constructor(title, desc, dueDate, priority) {

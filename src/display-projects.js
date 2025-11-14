@@ -1,5 +1,6 @@
 import { Category, myCategories } from "./to-do";
 import { displayTodo } from "./to-do-display";
+import { saveCategories } from "./storage";
 
 const projectsList = document.querySelector('#projects');
 
@@ -7,7 +8,7 @@ const addNewProject = document.querySelector('#addProject');
 
 const projetInput = document.querySelector('#projectNameImput');
 
-function displayProjectList() {
+export function displayProjectList() {
     for (let project of myCategories) {
         if (document.querySelector(`[project-id="${project.id}"]`) === null) {
             const projectLi = document.createElement('li');
@@ -30,6 +31,8 @@ export function createNewProject() {
 
         const newProject = new Category(projectName);
         newProject.addToGlobal();
+
+        saveCategories();
 
         displayProjectList();
 

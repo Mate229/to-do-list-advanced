@@ -1,4 +1,6 @@
 import { Todo, myToDos, myCategories } from "./to-do";
+import { saveCategories, saveTodos } from "./storage";
+
 const defaultDialog = document.querySelector('#default');
 
 const form = defaultDialog.querySelector("form");
@@ -79,6 +81,8 @@ export function submitDefaultDialog(e) {
 
     const newTask = new Todo(taskTitle.value, taskdesc.value, taskDueDate.value, taskPriority.value);
     newTask.addToList();
+    saveTodos();
+    saveCategories();
 
     if (document.querySelector('.active') === null) {
         displayTodo(myToDos);

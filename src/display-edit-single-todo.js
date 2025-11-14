@@ -1,3 +1,4 @@
+import { saveCategories, saveTodos } from "./storage";
 import { myToDos } from "./to-do";
 import { displayTodo } from "./to-do-display";
 
@@ -42,6 +43,8 @@ export function displayTodoContent() {
         thisTodoDelete.addEventListener('click', () => {
             if (todoIndex !== -1) {
                 myToDos.splice(todoIndex, 1);
+                saveTodos();
+                saveCategories();
             };
             card.remove();
             todoContent.innerHTML = '';
@@ -75,6 +78,8 @@ export function displayTodoContent() {
                 e.preventDefault();
 
                 thisTodo.edit(editTitle.value, editDesc.value, editDueDate.value, editPriority.value);
+                saveTodos();
+                saveCategories();
                 displayTodo(myToDos);
                 editDialog.close();
                 todoContent.innerHTML = '';

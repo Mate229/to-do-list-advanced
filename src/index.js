@@ -2,13 +2,20 @@ import './style.css';
 import initialPageLoad from './initial-page-load';
 import { showDefaultDialog, closeDefaultDialog, submitDefaultDialog, displayTodo } from './to-do-display';
 import { displayTodoContent } from './display-edit-single-todo';
-import { createNewProject, displayProjectContent } from './display-projects';
+import { createNewProject, displayProjectContent, displayProjectList } from './display-projects';
 import { myToDos } from './to-do';
+import { loadTodos, loadCategories } from './storage';
 
 initialPageLoad();
 displayTodoContent();
 createNewProject();
 displayProjectContent();
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadTodos();
+    loadCategories();
+    displayProjectList();
+});
 
 const defaultButton = document.querySelector('#addToDefault');
 defaultButton.addEventListener('click', showDefaultDialog);
