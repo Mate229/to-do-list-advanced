@@ -45,3 +45,12 @@ li {
     margin-left: 10px;
     
 }
+
+.status {
+    color: green;
+    display: none;
+}
+
+.show .status {
+    display: block;
+}

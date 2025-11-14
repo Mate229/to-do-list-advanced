@@ -33,6 +33,10 @@ export function displayTodoContent() {
         const thisTodoDueDate = document.createElement('h3');
         thisTodoDueDate.textContent = `Due Date: ${thisTodo.dueDate}`;
 
+        const thisTodoStatus = document.createElement('h4');
+        thisTodoStatus.textContent = 'This task is Completed! Well Done!';
+        thisTodoStatus.classList.add('status');
+
         const thisTodoDelete = document.createElement('button');
         thisTodoDelete.textContent = 'Delete';
         thisTodoDelete.addEventListener('click', () => {
@@ -89,11 +93,12 @@ export function displayTodoContent() {
             thisTodo.toggleCompleted();
             todoContent.innerHTML = '';
             card.classList.toggle('completed');
+            todoContent.classList.toggle('show');
             console.log(myToDos);
             displayTodo();
         });
 
-        todoContent.append(thisTodoTitle, thisTodoDesc, thisTodoPriority, thisTodoDueDate, thisTodoComplete, thisTodoDelete, thisTodoEdit);
+        todoContent.append(thisTodoTitle, thisTodoDesc, thisTodoPriority, thisTodoDueDate, thisTodoStatus, thisTodoComplete, thisTodoDelete, thisTodoEdit);
 
 
     });

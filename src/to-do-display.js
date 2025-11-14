@@ -2,7 +2,6 @@ import { Todo, myToDos } from "./to-do";
 const defaultDialog = document.querySelector('#default');
 
 const form = defaultDialog.querySelector("form");
-const submitBtn = document.querySelector("#submit-btn");
 
 export function showDefaultDialog() {
     defaultDialog.showModal();
