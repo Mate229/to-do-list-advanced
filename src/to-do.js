@@ -24,8 +24,9 @@ export class Todo {
         myToDos.push(this);
     }
 
-    addToCategory(name) {
-        name.push(this);
+    addToCategory(data, name) {
+        data.push(this);
+        this.category = name;
     }
 
     edit(newTitle, newDesc, newDueDate, newPriority) {

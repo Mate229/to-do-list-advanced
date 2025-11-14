@@ -31,7 +31,11 @@ export function displayTodo(list) {
             const card = document.createElement('div');
 
             const cardTitle = document.createElement('h2');
-            cardTitle.textContent = todo.title;
+            if (!todo.category) {
+                cardTitle.textContent = todo.title;
+            } else {
+                cardTitle.textContent = `${todo.title} (${todo.category})`;
+            }
 
             const cardDate = document.createElement('p');
             cardDate.textContent = todo.dueDate;
@@ -50,7 +54,11 @@ export function displayTodo(list) {
 
             card.classList.add(todo.priority);
 
-            card.querySelector('h2').textContent = todo.title;
+            if (!todo.category) {
+                card.querySelector('h2').textContent = todo.title;
+            } else {
+                card.querySelector('h2').textContent = `${todo.title} (${todo.category})`;
+            };
             card.querySelector('p').textContent = todo.dueDate;
 
             if (todo.completed) {
@@ -76,22 +84,20 @@ export function submitDefaultDialog(e) {
         displayTodo(myToDos);
     } else {
         const activeCategoryId = document.querySelector('.active').getAttribute('project-id');
-
-        console.log(activeCategoryId);
         
         const activeCategoryIndex = myCategories.findIndex(obj => obj.id === activeCategoryId);
 
         const activeCategory = myCategories[activeCategoryIndex];
 
-        const activeCategoryData = activeCategory.data;
+        newTask.addToCategory(activeCategory.data, activeCategory.name);
 
-        newTask.addToCategory(activeCategoryData);
-
-        displayTodo(activeCategoryData);
+        displayTodo(activeCategory.data);
     }
-    
+
     closeDefaultDialog();
 
     form.reset();
 
+    console.log(myToDos);
+    console.log(myCategories);
 };
