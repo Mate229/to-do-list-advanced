@@ -36,8 +36,9 @@ export class Todo {
     }
 };
 
-class Category {
+export class Category {
     constructor(name, data = []) {
+        this.id = crypto.randomUUID();
         this.name = name;
         this.data = data;
     }
@@ -47,4 +48,4 @@ class Category {
     }
 }
 
-export { myToDos }
+export { myToDos, myCategories }

@@ -1,4 +1,4 @@
-import { Todo, myToDos } from "./to-do";
+import { Todo, myToDos, myCategories } from "./to-do";
 const defaultDialog = document.querySelector('#default');
 
 const form = defaultDialog.querySelector("form");
@@ -9,13 +9,24 @@ export function showDefaultDialog() {
 
 export function closeDefaultDialog() {
     defaultDialog.close();
-}
+};
 
-export function displayTodo() {
+export function displayTodo(list) {
+
+    document.querySelector('#todoContent').innerHTML = '';
+
     const content = document.querySelector('#content');
     const addTaskButton = document.querySelector('#addToDefault');
 
-    for (let todo of myToDos) {
+    const taskCardList = document.querySelectorAll(`[todo-id]`);
+    taskCardList.forEach(card => {
+        const cardId = card.getAttribute('todo-id');
+        if (list.findIndex(obj => obj.id === cardId) === -1) {
+            card.remove();
+        }
+    })
+
+    for (let todo of list) {
         if (document.querySelector(`[todo-id="${todo.id}"]`) === null) {
             const card = document.createElement('div');
 
@@ -61,7 +72,24 @@ export function submitDefaultDialog(e) {
     const newTask = new Todo(taskTitle.value, taskdesc.value, taskDueDate.value, taskPriority.value);
     newTask.addToList();
 
-    displayTodo();
+    if (document.querySelector('.active') === null) {
+        displayTodo(myToDos);
+    } else {
+        const activeCategoryId = document.querySelector('.active').getAttribute('project-id');
+
+        console.log(activeCategoryId);
+        
+        const activeCategoryIndex = myCategories.findIndex(obj => obj.id === activeCategoryId);
+
+        const activeCategory = myCategories[activeCategoryIndex];
+
+        const activeCategoryData = activeCategory.data;
+
+        newTask.addToCategory(activeCategoryData);
+
+        displayTodo(activeCategoryData);
+    }
+    
     closeDefaultDialog();
 
     form.reset();

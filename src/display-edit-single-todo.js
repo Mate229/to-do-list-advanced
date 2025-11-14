@@ -75,7 +75,7 @@ export function displayTodoContent() {
                 e.preventDefault();
 
                 thisTodo.edit(editTitle.value, editDesc.value, editDueDate.value, editPriority.value);
-                displayTodo();
+                displayTodo(myToDos);
                 editDialog.close();
                 todoContent.innerHTML = '';
                 console.log(myToDos);
@@ -95,7 +95,7 @@ export function displayTodoContent() {
             card.classList.toggle('completed');
             todoContent.classList.toggle('show');
             console.log(myToDos);
-            displayTodo();
+            displayTodo(myToDos);
         });
 
         todoContent.append(thisTodoTitle, thisTodoDesc, thisTodoPriority, thisTodoDueDate, thisTodoStatus, thisTodoComplete, thisTodoDelete, thisTodoEdit);

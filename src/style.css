@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 30% 40% 30%;
     gap: 10px;
+    height: 90vh;
 }
 
 #sidebar > div {
@@ -53,4 +54,13 @@ li {
 
 .show .status {
     display: block;
+}
+
+#projectPlus {
+    display: flex;
+    align-items: center;
+}
+
+#projects > li {
+    cursor: pointer;
 }

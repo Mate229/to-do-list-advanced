@@ -1,4 +1,5 @@
 import { displayTodo } from "./to-do-display"; 
+import { myToDos } from "./to-do";
 
 export default function() {
     const content = document.querySelector('#content');
@@ -9,6 +10,6 @@ export default function() {
 
     content.appendChild(addTaskButton);
 
-    displayTodo();
+    displayTodo(myToDos);
 
 };
