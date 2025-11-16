@@ -95,6 +95,9 @@ export function submitDefaultDialog(e) {
 
         newTask.addToCategory(activeCategory.data, activeCategory.name);
 
+        saveCategories();
+        saveTodos();
+
         displayTodo(activeCategory.data);
     }
 

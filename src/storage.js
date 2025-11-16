@@ -28,6 +28,8 @@ export function loadTodos() {
 
             newTodo.completed = todoData.completed;
 
+            newTodo.category = todoData.category;
+
             return newTodo;
         });
 

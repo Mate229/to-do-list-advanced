@@ -46,6 +46,9 @@ export function displayTodoContent() {
                 saveTodos();
                 saveCategories();
             };
+            thisTodo.removeFromCategory();
+            saveTodos();
+            saveCategories();
             card.remove();
             todoContent.innerHTML = '';
         })
@@ -91,14 +94,18 @@ export function displayTodoContent() {
         if (thisTodo.completed) {
             thisTodoComplete.textContent = 'Completed'
             thisTodoEdit.disabled = true;
+            todoContent.classList.add('show');
+            card.classList.add('completed');
         } else {
             thisTodoComplete.textContent = 'Mark Completed'
+            todoContent.classList.remove('show');
+            card.classList.remove('completed');
         };
         thisTodoComplete.addEventListener('click', () => {
             thisTodo.toggleCompleted();
+            saveTodos();
+            saveCategories();
             todoContent.innerHTML = '';
-            card.classList.toggle('completed');
-            todoContent.classList.toggle('show');
             console.log(myToDos);
             displayTodo(myToDos);
         });

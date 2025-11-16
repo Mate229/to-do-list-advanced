@@ -28,6 +28,7 @@ submitDefaultBtn.addEventListener('click', submitDefaultDialog);
 
 const myTasksD = document.querySelector('#myTasksD');
 myTasksD.addEventListener('click', () => {
+    console.log(myToDos);
     displayTodo(myToDos);
     if (document.querySelector('.active') !== null) {
         document.querySelector('.active').classList.remove('active')

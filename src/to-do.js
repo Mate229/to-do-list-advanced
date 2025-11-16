@@ -35,6 +35,18 @@ export class Todo {
         this.dueDate = newDueDate;
         this.priority = newPriority;
     }
+
+    removeFromCategory() {
+        for (let category of myCategories) {
+            const dataArray = category.data;
+
+            const indexOfThis = dataArray.findIndex(obj => obj.id === this.id);
+
+            if (indexOfThis !== -1) {
+                dataArray.splice(indexOfThis, 1);
+            };
+        };
+    };
 };
 
 export class Category {
