@@ -36,6 +36,7 @@ body {
     background-color: var(--ctn-bg-clr);
     width: 100%;
     overflow-y: auto;
+    box-shadow: 0 -.1px;
 }
 
 /* SIDEBAR */
@@ -247,4 +248,20 @@ dialog #cancel-edit-btn {
     background-color: var(--btn-ccl-bg-clr);
     color: var(--sdbr-bg-clr);
     margin-right: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--sdbr-bg-clr);
+    width: 100%;
+    justify-content: center;
+    color: var(--white-clr);
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+a {
+    color: inherit;
 }
