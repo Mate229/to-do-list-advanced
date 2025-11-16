@@ -14,7 +14,7 @@ export function displayProjectList() {
             const projectLi = document.createElement('li');
             projectLi.classList.add('projectCategory');
             projectLi.setAttribute('project-id', project.id);
-            const projectTitle = document.createElement('h3');
+            const projectTitle = document.createElement('h4');
             projectTitle.textContent = project.name;
             projectLi.appendChild(projectTitle);
             projectsList.insertBefore(projectLi, projectsList.querySelector('#projectPlus'));
