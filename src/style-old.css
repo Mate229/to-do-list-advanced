@@ -1,113 +1,113 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
-    transition: all .3ms ease;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3ms ease;
 }
 
 body {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 40px 1fr;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40px 1fr;
 }
 
 #container {
-    display: grid;
-    grid-template-columns: max(120px, 25%) 1fr 1fr;
-    background-color: #f5f6f8;
-    overflow: auto;
+  display: grid;
+  grid-template-columns: max(120px, 25%) 1fr 1fr;
+  background-color: #f5f6f8;
+  overflow: auto;
 }
 
 #container > div {
-    border: 1px solid;
+  border: 1px solid;
 }
 
 #sidebar {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #sidebar > div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-#sidebar > div:hover, #sidebar > div:active {
-    margin-left: 10px;
+#sidebar > div:hover,
+#sidebar > div:active {
+  margin-left: 10px;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .active {
-    margin-left: 10px;
-    box-shadow: 0 0 5px;
-    padding: 5px;
+  margin-left: 10px;
+  box-shadow: 0 0 5px;
+  padding: 5px;
 }
 
 ul input {
-    width: 80%;
+  width: 80%;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 #content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
 }
 
 #content > div {
-    cursor: pointer;
-    height: 100px;
+  cursor: pointer;
+  height: 100px;
 }
 
 .high {
-    background-color: red;
+  background-color: red;
 }
 
 .medium {
-    background-color: orange;
+  background-color: orange;
 }
 
 .low {
-    background-color: green;
+  background-color: green;
 }
 
 .completed > h2 {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .completed > h2::after {
-    content: '✅';
-    display: inline-block;
-    margin-left: 10px;
-    
+  content: "✅";
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .status {
-    color: green;
-    display: none;
+  color: green;
+  display: none;
 }
 
 .show .status {
-    display: block;
+  display: block;
 }
 
 #projectPlus {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #projects > li {
-    cursor: pointer;
+  cursor: pointer;
 }

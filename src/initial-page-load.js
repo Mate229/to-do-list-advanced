@@ -1,15 +1,14 @@
-import { displayTodo } from "./to-do-display"; 
+import { displayTodo } from "./to-do-display";
 import { myToDos } from "./to-do";
 
-export default function() {
-    const content = document.querySelector('#content');
+export default function () {
+  const content = document.querySelector("#content");
 
-    const addTaskButton = document.createElement('button');
-    addTaskButton.textContent = 'Add Task';
-    addTaskButton.id = 'addToDefault';
+  const addTaskButton = document.createElement("button");
+  addTaskButton.textContent = "Add Task";
+  addTaskButton.id = "addToDefault";
 
-    content.appendChild(addTaskButton);
+  content.appendChild(addTaskButton);
 
-    displayTodo(myToDos);
-
-};
+  displayTodo(myToDos);
+}

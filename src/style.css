@@ -1,267 +1,267 @@
 :root {
-    --prty-clr-red: #e63946;
-    --prty-clr-orange: #f4a261;
-    --prty-clr-green: #2a9d8f;
-    --ctn-bg-clr: #f5f6f8;
-    --sdbr-bg-clr: #1f1f1f;
-    --sdbr-div-hv-bg-clr: #333;
-    --btn-blue-gb-clr: #0078ff;
-    --btn-ccl-bg-clr: #ccc;
-    --white-clr: #ffffff;
+  --prty-clr-red: #e63946;
+  --prty-clr-orange: #f4a261;
+  --prty-clr-green: #2a9d8f;
+  --ctn-bg-clr: #f5f6f8;
+  --sdbr-bg-clr: #1f1f1f;
+  --sdbr-div-hv-bg-clr: #333;
+  --btn-blue-gb-clr: #0078ff;
+  --btn-ccl-bg-clr: #ccc;
+  --white-clr: #ffffff;
 
-    --trsf-bt-hv: scale(1.1);
+  --trsf-bt-hv: scale(1.1);
 }
 
 /* GLOBAL RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, sans-serif;
-    text-wrap: pretty;
-    transition: all .3s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  text-wrap: pretty;
+  transition: all 0.3s ease;
 }
 
 /* LAYOUT */
 body {
-    height: 100dvh;
-    max-width: 100dvw;
-    display: grid;
-    grid-template-rows: 40px 1fr;
+  height: 100dvh;
+  max-width: 100dvw;
+  display: grid;
+  grid-template-rows: 40px 1fr;
 }
 
 #container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    background-color: var(--ctn-bg-clr);
-    width: 100%;
-    overflow-y: auto;
-    box-shadow: 0 -.1px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  background-color: var(--ctn-bg-clr);
+  width: 100%;
+  overflow-y: auto;
+  box-shadow: 0 -0.1px;
 }
 
 /* SIDEBAR */
 #sidebar {
-    background-color: var(--sdbr-bg-clr);
-    color: var(--white-clr);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--sdbr-bg-clr);
+  color: var(--white-clr);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #sidebar h1 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 #sidebar > div {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.2s;
 }
 
 #sidebar > div:hover,
 .active {
-    background-color: var(--sdbr-div-hv-bg-clr);
+  background-color: var(--sdbr-div-hv-bg-clr);
 }
 
 /* PROJECT LIST */
 #projects {
-    margin-top: 10px;
-    padding-left: 5px;
+  margin-top: 10px;
+  padding-left: 5px;
 }
 
 #projects li {
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.2s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #projects li:hover {
-    background-color: var(--sdbr-div-hv-bg-clr);
-    color: var(--white-clr);
+  background-color: var(--sdbr-div-hv-bg-clr);
+  color: var(--white-clr);
 }
 
 #projectPlus {
-    display: flex;
-    gap: 10px;
-    color: var(--white-clr);
+  display: flex;
+  gap: 10px;
+  color: var(--white-clr);
 }
 
 ul input {
-    width: 80%;
+  width: 80%;
 }
 
 /* CONTENT PANEL */
 #content {
-    padding: 10px;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 #content button#addToDefault {
-    align-self: flex-start;
-    padding: 10px 18px;
-    background-color: var(--btn-blue-gb-clr);
-    color: var(--white-clr);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
+  align-self: flex-start;
+  padding: 10px 18px;
+  background-color: var(--btn-blue-gb-clr);
+  color: var(--white-clr);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 #content button#addToDefault:hover {
-    transform: var(--trsf-bt-hv);
+  transform: var(--trsf-bt-hv);
 }
 
 /* TASK CARDS */
 .taskCard {
-    background-color: var(--white-clr);
-    padding: 14px 18px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px var(--sdbr-div-hv-bg-clr);
-    cursor: pointer;
-    transition: 0.2s;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  background-color: var(--white-clr);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--sdbr-div-hv-bg-clr);
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .taskCard:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 1px;
+  transform: translateY(-2px);
+  box-shadow: 0 0 1px;
 }
 
 /* PRIORITY COLORS */
 .high {
-    border-left: 6px solid var(--prty-clr-red);
+  border-left: 6px solid var(--prty-clr-red);
 }
 .medium {
-    border-left: 6px solid var(--prty-clr-orange);
+  border-left: 6px solid var(--prty-clr-orange);
 }
 .low {
-    border-left: 6px solid var(--prty-clr-green);
+  border-left: 6px solid var(--prty-clr-green);
 }
 
 /* COMPLETED STYLE */
 .completed h2 {
-    text-decoration: line-through;
-    color: var(--sdbr-div-hv-bg-clr);
+  text-decoration: line-through;
+  color: var(--sdbr-div-hv-bg-clr);
 }
 
 .completed h2::after {
-    content: "✔";
-    display: inline-block;
-    margin-left: 8px;
-    color: var(--prty-clr-green);
+  content: "✔";
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--prty-clr-green);
 }
 
 .status {
-    display: none;
-    color: var(--prty-clr-green);
+  display: none;
+  color: var(--prty-clr-green);
 }
 
 .show .status {
-    display: block;
+  display: block;
 }
 
 /* TASK DETAILS PANEL */
 #todoContent {
-    background-color: var(--white-clr);
-    padding: 10px;
-    box-shadow: -.25px 0 0;
-    overflow-y: auto;
+  background-color: var(--white-clr);
+  padding: 10px;
+  box-shadow: -0.25px 0 0;
+  overflow-y: auto;
 }
 
 #todoContent h1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #todoContent button {
-    padding: 8px 15px;
-    border: none;
-    background-color: var(--btn-blue-gb-clr);
-    color: var(--white-clr);
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-    margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background-color: var(--btn-blue-gb-clr);
+  color: var(--white-clr);
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 #todoContent button:hover {
-    transform: var(--trsf-bt-hv);
+  transform: var(--trsf-bt-hv);
 }
 
 #todoContent button:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 /* DELETE BUTTON */
 #todoContent button:nth-of-type(2) {
-    background-color: var(--prty-clr-red);
+  background-color: var(--prty-clr-red);
 }
 
 #todoContent button:nth-of-type(2):hover {
-    transform: var(--trsf-bt-hv);
+  transform: var(--trsf-bt-hv);
 }
 
 /* DIALOGS */
 dialog {
-    padding: 20px;
-    border: none;
-    border-radius: 12px;
-    width: 350px;
+  padding: 20px;
+  border: none;
+  border-radius: 12px;
+  width: 350px;
 }
 
 dialog form div {
-    margin-bottom: 12px;
-    display: flex;
-    flex-direction: column;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 dialog input,
 dialog select {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid;
 }
 
 dialog button {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: none;
-    background-color: var(--btn-blue-gb-clr);
-    color: var(--white-clr);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--btn-blue-gb-clr);
+  color: var(--white-clr);
 }
 
 dialog #cancel-default-btn,
 dialog #cancel-edit-btn {
-    background-color: var(--btn-ccl-bg-clr);
-    color: var(--sdbr-bg-clr);
-    margin-right: 10px;
+  background-color: var(--btn-ccl-bg-clr);
+  color: var(--sdbr-bg-clr);
+  margin-right: 10px;
 }
 
 /* FOOTER */
 footer {
-    background-color: var(--sdbr-bg-clr);
-    width: 100%;
-    justify-content: center;
-    color: var(--white-clr);
-    display: flex;
-    align-items: center;
-    padding-bottom: 5px;
-    padding-top: 5px;
+  background-color: var(--sdbr-bg-clr);
+  width: 100%;
+  justify-content: center;
+  color: var(--white-clr);
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
